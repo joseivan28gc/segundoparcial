@@ -1,7 +1,7 @@
 const db = require('../config/db.config.js');
 const Persona = db.Persona;
 
-// Crear una nueva Persona
+
 exports.create = (req, res) => {
     let persona = {};
 
@@ -28,7 +28,7 @@ exports.create = (req, res) => {
     }
 };
 
-// Obtener todas las Personas
+
 exports.retrieveAllPersonas = (req, res) => {
     Persona.findAll()
         .then(personaInfos => {
@@ -46,7 +46,7 @@ exports.retrieveAllPersonas = (req, res) => {
         });
 };
 
-// Obtener una Persona por ID
+
 exports.getPersonaById = (req, res) => {
     let personaId = req.params.id;
     Persona.findByPk(personaId)
@@ -70,7 +70,7 @@ exports.getPersonaById = (req, res) => {
         });
 };
 
-// Actualizar Persona por ID
+
 exports.updateById = async (req, res) => {
     try {
         let personaId = req.params.id;
@@ -115,7 +115,7 @@ exports.updateById = async (req, res) => {
     }
 };
 
-// Eliminar Persona por ID
+
 exports.deleteById = async (req, res) => {
     try {
         let personaId = req.params.id;

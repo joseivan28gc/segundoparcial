@@ -1,7 +1,6 @@
 const db = require('../config/db.config.js');
 const Tarea = db.Tarea;
 
-// Crear una nueva Tarea
 exports.create = (req, res) => {
     let tarea = {};
 
@@ -26,7 +25,6 @@ exports.create = (req, res) => {
     }
 };
 
-// Obtener todas las Tareas
 exports.retrieveAllTareas = (req, res) => {
     Tarea.findAll()
         .then(tareaInfos => {
@@ -44,7 +42,7 @@ exports.retrieveAllTareas = (req, res) => {
         });
 };
 
-// Obtener una Tarea por ID
+
 exports.getTareaById = (req, res) => {
     let tareaId = req.params.id;
     Tarea.findByPk(tareaId)
@@ -68,7 +66,7 @@ exports.getTareaById = (req, res) => {
         });
 };
 
-// Actualizar Tarea por ID
+
 exports.updateById = async (req, res) => {
     try {
         let tareaId = req.params.id;
@@ -111,7 +109,7 @@ exports.updateById = async (req, res) => {
     }
 };
 
-// Eliminar Tarea por ID
+
 exports.deleteById = async (req, res) => {
     try {
         let tareaId = req.params.id;

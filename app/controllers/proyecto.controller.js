@@ -1,7 +1,7 @@
 const db = require('../config/db.config.js');
 const Proyecto = db.Proyecto;
 
-// Crear un nuevo Proyecto
+
 exports.create = (req, res) => {
     let proyecto = {};
 
@@ -25,7 +25,7 @@ exports.create = (req, res) => {
     }
 };
 
-// Obtener todos los Proyectos
+
 exports.retrieveAllProyectos = (req, res) => {
     Proyecto.findAll()
         .then(proyectoInfos => {
@@ -43,7 +43,7 @@ exports.retrieveAllProyectos = (req, res) => {
         });
 };
 
-// Obtener un Proyecto por ID
+
 exports.getProyectoById = (req, res) => {
     let proyectoId = req.params.id;
     Proyecto.findByPk(proyectoId)
@@ -67,7 +67,6 @@ exports.getProyectoById = (req, res) => {
         });
 };
 
-// Actualizar Proyecto por ID
 exports.updateById = async (req, res) => {
     try {
         let proyectoId = req.params.id;
@@ -109,7 +108,7 @@ exports.updateById = async (req, res) => {
     }
 };
 
-// Eliminar Proyecto por ID
+
 exports.deleteById = async (req, res) => {
     try {
         let proyectoId = req.params.id;
