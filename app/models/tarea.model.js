@@ -7,8 +7,6 @@ module.exports = (sequelize, Sequelize) => {
     },
     id_proyecto: {
         type: Sequelize.INTEGER,
-    autoIncrement: true,
-        finallyKey: true
     },
 	  nombre: {
 		type: Sequelize.STRING
