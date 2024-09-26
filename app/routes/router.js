@@ -1,20 +1,37 @@
 const express = require('express');
 const router = express.Router();
+
 const personaController = require('../controllers/persona.controller.js');
+const usuarioController = require('../controllers/usuario.controller.js');
+const proyectoController = require('../controllers/proyecto.controller.js');
+const tareaController = require('../controllers/tarea.controller.js');
 
-// Ruta para crear una nueva Persona (POST)
+//Personas
 router.post('/personas', personaController.create);
-
-// Ruta para obtener todas las Personas (GET)
 router.get('/personas', personaController.retrieveAllPersonas);
-
-// Ruta para obtener una Persona por su ID (GET)
 router.get('/personas/:id', personaController.getPersonaById);
-
-// Ruta para actualizar una Persona por su ID (PUT)
 router.put('/personas/:id', personaController.updateById);
-
-// Ruta para eliminar una Persona por su ID (DELETE)
 router.delete('/personas/:id', personaController.deleteById);
+router.post('/usuarios', usuarioController.create);
+
+//Usuarios
+router.get('/usuarios', usuarioController.retrieveAllUsuarios);
+router.get('/usuarios/:id', usuarioController.getUsuarioById);
+router.put('/usuarios/:id', usuarioController.updateById);
+router.delete('/usuarios/:id', usuarioController.deleteById);
+
+//Proyectos
+router.post('/proyectos', proyectoController.create);
+router.get('/proyectos', proyectoController.retrieveAllProyectos);
+router.get('/proyectos/:id', proyectoController.getProyectoById);
+router.put('/proyectos/:id', proyectoController.updateById);
+router.delete('/proyectos/:id', proyectoController.deleteById);
+
+//Tarea
+router.post('/tareas', tareaController.create);
+router.get('/tareas', tareaController.retrieveAllTareas);
+router.get('/tareas/:id', tareaController.getTareaById);
+router.put('/tareas/:id', tareaController.updateById);
+router.delete('/tareas/:id', tareaController.deleteById);
 
 module.exports = router;
